@@ -6,18 +6,18 @@
 
    span span.jey {
      color: red;
-     font-weight: 900;
+     font-weight: 1000;
      font-variant-caps: unset
    }
 
    .text {
-     position: absolute;
-     top: 50%;
+     /* position: absolute; */
+     /* top: 50%; */
      right: 50%;
-     transform: translate(50%, -50%);
+     /* transform: translate (50%, -50%); */
      text-transform: uppercase;
      font-family: verdana;
-     font-size: 12em;
+     font-size: 7em;
      font-weight: 700;
      color: #f5f5f5;
      text-shadow: 1px 1px 1px #919191,
@@ -35,5 +35,73 @@
        1px 25px 35px rgba(151, 12, 12, 0.2),
        1px 30px 60px rgba(160, 13, 13, 0.4);
 
+     /* < !--***************************** 3D Text Effect in CSS****************************************** --> */
 
+
+   }
+
+   
+   .headstyle {
+     font-family: 'Courgette', cursive;
+     font-size: 1.5em;
+   }
+
+   /* < !--***************************** 3d text marquee Effect ****************************************** --> */
+   .marqueestuff {
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: rgb(211, 141, 35);
+   }
+
+   .box {
+     display: flex;
+   }
+
+   .box .inner {
+     width: 400px;
+     height: 200px;
+     line-height: 200px;
+     font-size: 4em;
+     font-family: Satisfy, cursive;
+     font-weight: bold;
+     white-space: nowrap;
+     overflow: hidden;
+   }
+
+   .box .inner:first-child {
+     background-color: indianred;
+     color: darkred;
+     transform-origin: right;
+     transform: perspective(100px) rotateY(-15deg);
+   }
+
+   .box .inner:last-child {
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     background-color: rgb(8, 117, 108);
+     font-family: Courgette ,cursive;
+     color: rgb(7, 100, 96);
+     transform-origin: left;
+     transform: perspective(100px) rotateY(15deg);
+   }
+
+   .box .inner span {
+     position: absolute;
+     animation: marquee 5s linear infinite;
+   }
+
+   .box .inner:first-child span {
+     animation-delay: 3.5s;
+     left: -100%;
+   }
+
+   @keyframes marquee {
+     from {
+       left: 100%;
+     }
+
+     to {
+       left: -100%;
+     }
    }

@@ -1,31 +1,40 @@
 <div class="container-fluid">
-    <h2 class="text-center">Create a new Quote</h2>
+    <h2 class="text-center fontcool">Create Quote</h2>
     <hr>
-    <form (ngSubmit)='submitQuote()' #quoteForm='ngForm' class="formbackground" >
+    <form (ngSubmit)='submitQuote()' #quoteForm='ngForm' class="formbackground">
         <div class="form-group">
-
-            <label text-center for="name" class="text-center">Name</label >
-      <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel' required>
-      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-        <p class="text-center">Enter your Name</p>
-      </div>
-    </div>
-    <div class="form-group" >
-
-      <label for="description" class="text-center">Write Quote</label>
-            <textarea style="font-family: 'Courgette', cursive; font-size:1.5em; color: blue;" class="form-control" id="description" rows="4" [(ngModel)]="newQuote.description" name="description" #description="ngModel" required></textarea>
+            <label text-center for="name" class="text-center">Your Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel'
+                required>
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                <p class="text-center">Enter your Name</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description" class="text-center">Write a Quote</label>
+            <textarea style="font-family: 'Courgette', cursive; font-size:1.5em; color: rgb(0, 183, 255);" class="form-control"
+                id="description" rows="4" [(ngModel)]="newQuote.description" name="description" #description="ngModel"
+                required></textarea>
             <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
-                <p>Description is required</p>
+                <p class="fontcool" >Description is required</p>
             </div>
         </div>
         <div class="form-group">
-
-            <label for="complete">Completion</label>
-            <input type='date' id="complete" [(ngModel)]="newQuote.completeDate" name="completeDate" #completeDate="ngModel" required>
-            <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
-                <p>Date is required</p>
+            <label text-center for="name" class="text-center">Who is the original author?</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel'
+                required>
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                <p class="text-center, fontcool">Enter original author name</p>
             </div>
         </div>
-        <button type="submit" class="btn btn-success">Add Quote</button>
+        <div class="form-group">
+            <label for="complete">Completion</label>
+            <input type='date' id="complete" [(ngModel)]="newQuote.completeDate" name="completeDate"
+                #completeDate="ngModel" required>
+            <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
+                <p class="fontcool" >Date is required</p>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success" style="background-color: rgb(8, 117, 108);">Post Quote</button>
     </form>
 </div>

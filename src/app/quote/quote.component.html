@@ -1,28 +1,48 @@
-<div class="container">
-    <!--***************************** 3D Text Effect in CSS****************************************** -->
-<div id="name"  class="text-center" >
-    <span class="text"> <span class="jey">"Q"</span> uotes <span class="jey">!</span></span>
-</div>
-    <!--***************************** 3D Text Effect in CSS****************************************** -->
+<div class="container-fluid">
+    <!-- <h1>quotes</h1> -->
+    <!--***************************** 3D Text Effect****************************************** -->>
+    <div class="row">
+        <div class="col-md-9" id="name">
+            <span class="text"> <span class="jey">" Q ~ " </span>uotes<span class="jey">!</span></span>
+        </div>
+        <div class=" col-md-3">
+            <div class="marqueestuff">
+                <div class="box">
+                    <div class="inner">
+                        <span>~#Quote Life</span>
+                    </div>
+                    <div class="inner">
+                        <span>~#Daily Power~</span>
+                    </div>
+                </div>
+            </div>
 
-    <h1 class=text-center></h1>
+        </div>
+    </div>
+    <!--***************************** 3D Text Effect****************************************** -->
+
     <hr>
 
     <div class="row">
         <div class="col-md-6">
-            <div *ngFor='let quote of quotes;let i = index'>
-                <div style="font-family: 'Courgette', cursive; font-size:1.5em; color:indigo">
-                    <h6 id={{i}} appStrikethrough>{{quote.name}} {{quote.completeDate|date|uppercase}}</h6>
-                    <button r (click)='toggleDetails(i)' class="btn btn-success"> see more</button>
+            <h1 class="fontcool text-center">Trending Quotes</h1>
+            <h1 class="fontcool text-center">~highest rated;</h1>
+
+            <div *ngFor='let quote of quotes;let i = index' class="quotebox" >
+                <div class="headstyle">
+                    <h6 id={{i}} appStrikethrough>{{quote.name}} {{quote.completeDate|date}}</h6>
+                    <button r (click)='toggleDetails(i)' class="btn btn-success"
+                        style="background-color: rgb(8, 117, 108);"> View quote</button>
                 </div>
 
                 <div *ngIf='quote.showDescription'>
-                    <app-quote-detail style="font-family: 'Courgette', cursive; font-size:1.5em; color:indigo" [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
+                    <app-quote-detail class="headstyle" [quote]='quote' (isComplete)='deleteQuote($event,i)'>
+                    </app-quote-detail>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <app-quote-form style="font-family: 'Courgette', cursive; font-size:1.5em;" (addQuote)="addNewQuote($event)"></app-quote-form>
+            <app-quote-form class="headstyle" (addQuote)="addNewQuote($event)"></app-quote-form>
         </div>
     </div>
 </div>
