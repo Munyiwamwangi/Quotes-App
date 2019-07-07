@@ -42,6 +42,7 @@ export class QuoteComponent implements OnInit {
     // quote.publisher + 1;
     quote.completeDate = new Date(quote.completeDate);
     this.quotes.push(quote);
+    // eventPreventDefault();
   }
   // <!--***************************** quote voting  Effect ****************************************** -->
 
@@ -78,6 +79,11 @@ export class QuoteComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    const arr = [];
+    this.quotes.forEach(quote => {
+      arr.push(quote.upVote - quote.dnVote);
+    });
+    const high = Math.max.apply(Math, arr);
   }
 
 }

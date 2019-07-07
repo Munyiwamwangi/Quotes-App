@@ -11,7 +11,7 @@ button {
 
 * {
   background-color: #c4c4c4;
-
+  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;
@@ -43,7 +43,19 @@ html {
   padding-left: 5%;
 
 }
-/****************************** BUTTONS ********************/
+/****************************** class quotes ********************/
+.quotes{
+  background-image: url('./assets/images/back1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  
+}
+.setbox{
+margin-left: 15%;
+margin-right: 15%;
+}
+/****************************** buttons ********************/
 button {
   position: relative;
   color: white;
@@ -53,6 +65,8 @@ button {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   outline-color: transparent;
+  border-radius: 30px;
+
 }
 
 button:after {
