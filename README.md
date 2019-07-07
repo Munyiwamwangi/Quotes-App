@@ -71,3 +71,31 @@ Hurray ! ; Create and Enjoy Quotes
 ## BDD
 
 <!-- |*Input | Output | Expected Output| -->
+
+## Built With
+
+* HTML - The language used to program the webpage
+* CSS - Styling the HTML
+* JAVASCRIPT - Used to add functionality to the application.
+* TYPESCRIPT - Language to write angular applications
+* ANGULAR JS - Templates;
+
+## Contributing
+
+If you want to put out a pull request you first have to send us the sample code that you want to add to our repository for cross-checking before we allow the pull.
+
+## Versioning
+
+We use currently have only the first version of this application.
+
+## Authors
+
+* Munyi Mwangi Wanjiku  - Initial work - Portfolio(link)
+
+## Contacts
+
+* amadaick@gmail.com
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file below for details
