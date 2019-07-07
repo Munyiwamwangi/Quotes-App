@@ -99,3 +99,8 @@ We use currently have only the first version of this application.
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file below for details
+
+## Acknowledgments
+
+* Munyi Mwangi
+* e.t.c

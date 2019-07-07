@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Quote } from '../quote';
+import { QuoteFormComponent } from '../quote-form/quote-form.component';
+
 
 @Component({
   selector: 'app-quote',
@@ -7,6 +9,10 @@ import { Quote } from '../quote';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
+  @Input() quote: any;
+  @Input() submitByName: any;
+  @Input() quoteUpdate: QuoteFormComponent ;
+
   quotes: Quote[] = [
     new Quote(1, 'Cheap is expensive', 'Merlin', 'Joe', 0, 0, new Date(2004, 7, 14)),
     new Quote(2, 'Enjoy your youth while you are still"free"', 'Merlin', 'Joe_me', 0, 0, new Date(2012, 9, 14)),
@@ -19,6 +25,7 @@ export class QuoteComponent implements OnInit {
   ];
   toggleDetails(index) {
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
+
   }
   deleteQuote(isComplete, index) {
     if (isComplete) {
@@ -36,6 +43,38 @@ export class QuoteComponent implements OnInit {
     quote.completeDate = new Date(quote.completeDate);
     this.quotes.push(quote);
   }
+  // <!--***************************** quote voting  Effect ****************************************** -->
+
+  upVoter(index) {
+    let i: number;
+    i = this.quotes[index].upVote;
+    i++;
+    this.quotes[index].upVote = i;
+    console.log('this i: ' + i);
+  }
+
+  dnVoter(index) {
+    let j: number;
+    j = this.quotes[index].dnVote;
+    j++;
+    this.quotes[index].dnVote = j;
+  }
+
+  highest(arr) {
+    arr = [];
+    this.quotes.forEach(quote => {
+      arr.push(quote.upVote);
+    });
+    const high = Math.max.apply(Math, arr);
+    return high;
+  }
+
+  addQuote(quote) {
+    this.quotes.unshift(quote);
+    console.log(this.quotes);
+  }
+    // <!--***************************** quote voting  Effect ****************************************** -->
+
   constructor() { }
 
   ngOnInit() {

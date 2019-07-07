@@ -40,7 +40,7 @@
 
    }
 
-   
+
    .headstyle {
      font-family: 'Courgette', cursive;
      font-size: 1.5em;
@@ -80,7 +80,7 @@
    .box .inner:last-child {
      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
      background-color: rgb(8, 117, 108);
-     font-family: Courgette ,cursive;
+     font-family: Courgette, cursive;
      color: rgb(7, 100, 96);
      transform-origin: left;
      transform: perspective(100px) rotateY(15deg);
@@ -105,3 +105,11 @@
        left: -100%;
      }
    }
+.para1{
+color: rgb(5, 61, 61);
+padding: 7%;
+}
+ .p1box {
+   padding: 10%;
+   top: 30%;
+ }

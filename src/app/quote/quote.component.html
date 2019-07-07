@@ -1,6 +1,5 @@
 <div class="container-fluid">
-    <!-- <h1>quotes</h1> -->
-    <!--***************************** 3D Text Effect****************************************** -->>
+    <!--***************************** 3D Text Effect****************************************** -->
     <div class="row">
         <div class="col-md-9" id="name">
             <span class="text"> <span class="jey">" Q ~ " </span>uotes<span class="jey">!</span></span>
@@ -9,32 +8,48 @@
             <div class="marqueestuff">
                 <div class="box">
                     <div class="inner">
-                        <span>~#Quote Life</span>
+                        <span>~Quote Your Life</span>
                     </div>
                     <div class="inner">
                         <span>~#Daily Power~</span>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     <!--***************************** 3D Text Effect****************************************** -->
-
     <hr>
-
+    <div class="row">
+        <h4 class="fontcool text-center">"A quote a day can keep your worries at bay, and your success at stay."</h4>
+    </div>
+    <hr>
     <div class="row">
         <div class="col-md-6">
+            <p class="lowcase text-center para1 p1box">
+                <i class="fas fa-quote-left"></i>
+                “ SECURITY IS MOSTLY A SUPERSTITION. IT DOES NOT EXIST IN NATURE, NOR DO THE CHILDREN OF MEN AS A WHOLE
+                EXPERIENCE IT.
+                AVOIDING DANGER IS NO SAFER IN THE LONG RUN THAN OUTRIGHT EXPOSURE. LIFE IS EITHER A DARING ADVENTURE,
+                OR
+                NOTHING. ”
+                <i class="fas fa-quote-right"></i>
+
+            </p>
+            <div class="blockquote-footer text-center">
+                <small class="text-muted fontcool">HELEN KELLER</small>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <app-quote-form class="headstyle" (addQuote)="addNewQuote($event)"></app-quote-form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
             <h1 class="fontcool text-center">Trending Quotes</h1>
             <h1 class="fontcool text-center">~highest rated;</h1>
 
-            <div *ngFor='let quote of quotes;let i = index' class="quotebox" >
-                <div class="headstyle">
-                    <h6 id={{i}} appStrikethrough>{{quote.name}} {{quote.completeDate|date}}</h6>
-                    <button r (click)='toggleDetails(i)' class="btn btn-success"
-                        style="background-color: rgb(8, 117, 108);"> View quote</button>
-                </div>
-
+            <div *ngFor='let quote of quotes;let i = index' class="quotebox">
                 <div *ngIf='quote.showDescription'>
                     <app-quote-detail class="headstyle" [quote]='quote' (isComplete)='deleteQuote($event,i)'>
                     </app-quote-detail>
@@ -43,10 +58,28 @@
                     <app-quote-detail class="headstyle" [quote]='quote' (isComplete)='deleteQuote($event,i)'>
                     </app-quote-detail>
                 </div>
+                <div class="headstyle">
+                    <h6 id={{i}} appStrikethrough>{{quote.name}} {{quote.completeDate|date}}</h6>
+                    <!-- <div *ngIf= 'showButton' > -->
+                    <div>
+                        <button r (click)='toggleDetails(i)' class="btn btn-success"
+                            style="background-color: rgb(8, 117, 108);"> Quote Details
+                        </button>
+                    </div>
+                    <!--***************************** quote voting  Effect******************************************-->
+
+                    <div class="votes">
+                        <span (click)='upVoter(i);highest();'>
+                            <i class="far fa-thumbs-up"></i>Up<span>{{quote.upVote}}</span>
+                        </span>
+                        <span (click)='dnVoter(i)'>
+                            <i class="far fa-thumbs-down"></i>Dis<span class="dn">{{quote.dnVote}}</span>
+                        </span>
+                    </div>
+                    <!--***************************** quote voting Effect****************************************** -->
+
+                </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <app-quote-form class="headstyle" (addQuote)="addNewQuote($event)"></app-quote-form>
         </div>
     </div>
 </div>
