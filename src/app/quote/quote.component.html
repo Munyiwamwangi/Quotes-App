@@ -39,6 +39,10 @@
                     <app-quote-detail class="headstyle" [quote]='quote' (isComplete)='deleteQuote($event,i)'>
                     </app-quote-detail>
                 </div>
+                <div *ngIf='quote.publisher'>
+                    <app-quote-detail class="headstyle" [quote]='quote' (isComplete)='deleteQuote($event,i)'>
+                    </app-quote-detail>
+                </div>
             </div>
         </div>
         <div class="col-md-6">

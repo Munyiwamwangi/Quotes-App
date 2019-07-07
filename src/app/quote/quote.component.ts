@@ -8,13 +8,13 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes: Quote[] = [
-    new Quote(1, 'Cheap is expensive', 'Merlin', 'Joe', 0, 0, new Date(2019, 3, 14)),
-    new Quote(2, 'Enjoy your youth while you are still"free"', 'Merlin', 'Joe_me', 0, 0, new Date(2019, 3, 14)),
-    new Quote(3, 'If you judge people, you have no time to love them. ', 'Columbus', 'Joe-me', 0, 0, new Date(2019, 3, 14)),
-    new Quote(4, 'Life is not about finding yourself.Life is about creating yourself.', 'B. Shaw', 'sonia', 0, 0, new Date(2019, 3, 14)),
-    new Quote(5, 'Life is really simple, but we insist on making it complicated', 'Confucius', 'JoeM', 0, 0, new Date(2019, 3, 14)),
-    new Quote(6, 'I have found that if you love life, life will love you back.', 'Arthur ', 'Joe Russel', 0, 0, new Date(2019, 3, 14)),
-    new Quote(7, 'You get in life what you have the courage to ask for', 'Oprah', 'Arthur', 0, 0, new Date(2019, 3, 14))
+    new Quote(1, 'Cheap is expensive', 'Merlin', 'Joe', 0, 0, new Date(2004, 7, 14)),
+    new Quote(2, 'Enjoy your youth while you are still"free"', 'Merlin', 'Joe_me', 0, 0, new Date(2012, 9, 14)),
+    new Quote(3, 'If you judge people, you have no time to love them. ', 'Columbus', 'Joe-me', 0, 0, new Date(2014, 4, 14)),
+    new Quote(4, 'Life is not about finding yourself.Life is about creating yourself.', 'B. Shaw', 'sonia', 0, 0, new Date(2018, 5, 14)),
+    new Quote(5, 'Life is really simple, but we insist on making it complicated', 'Confucius', 'JoeM', 0, 0, new Date(2017, 7, 14)),
+    new Quote(6, 'I have found that if you love life, life will love you back.', 'Arthur ', 'Joe Russel', 0, 0, new Date(2018, 12, 14)),
+    new Quote(7, 'You get in life what you have the courage to ask for', 'Oprah', 'Arthur', 0, 0, new Date(2016, 3, 14))
 
   ];
   toggleDetails(index) {
