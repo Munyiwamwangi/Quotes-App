@@ -105,14 +105,29 @@
        left: -100%;
      }
    }
-.para1{
-color: rgb(5, 61, 61);
-padding: 7%;
-}
- .p1box {
-   padding: 10%;
-   top: 30%;
- }
- .padding-left{
-   padding-left: 25%;
- }
+
+   .para1 {
+     color: rgb(5, 61, 61);
+     padding: 7%;
+   }
+
+   .p1box {
+     padding: 10%;
+     top: 30%;
+   }
+
+   .padding-left {
+     padding-left: 25%;
+   }
+
+   .favquote {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     width: 100%;
+     box-shadow: 0 0 5px rgb(255, 255, 255);
+     position: relative;
+  animation: show 1.2s linear 1;
+  
+    
+   }

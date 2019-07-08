@@ -48,14 +48,14 @@
         </div>
     </div>
     <br><br><br>
-                <h1 class="fontcool text-center"> ~highest rated ~ </h1>
+    <h1 class="fontcool text-center"> ~ quote of the day ~ </h1>
 
     <div class="col-md-12 quotes">
         <div class="setbox">
             <div>
-<!--***************************** quote voting  Effect******************************************-->
+                <!--************************* quote voting  Effect*****************-->
 
-                <div class="high-cont" *ngFor="let quote of quotes; let i = index; let j = index;">
+                <div class="favquote" *ngFor="let quote of quotes; let i = index; let j = index;">
 
                     <div class="high-quote" appHighestVote *ngIf='quote.upVote == highest() && highest() > 0'>
                         <br>
@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </div>
-<!--***************************** quote voting  Effect******************************************-->
+            <!--***************************** quote voting  Effect**************************-->
 
             <div *ngFor='let quote of quotes;let i = index' class="quotebox">
                 <div *ngIf='quote.showDescription'>
@@ -91,7 +91,7 @@
                             style="background-color: rgb(8, 117, 108);"> Quote Details
                         </button>
                     </div>
-<!--***************************** quote voting  Effect******************************************-->
+                    <!--***************************** quote voting  Effect*********************-->
 
                     <div class="votes">
                         <span (click)='upVoter(i);highest();'>
@@ -101,10 +101,13 @@
                             <i class="far fa-thumbs-down"></i>Dis<span class="dn">{{quote.dnVote}}</span>
                         </span>
                     </div>
-                    <!--***************************** quote voting Effect****************************************** -->
+                    <!--*********************** quote voting Effect*********************** -->
 
                 </div>
             </div>
         </div>
     </div>
+    <footer>
+        <p class="text-center" style="font-family: Courgette, cursive;   color: rgb(28, 99, 99)">© 2019 Quotes</p>
+    </footer>
 </div>
