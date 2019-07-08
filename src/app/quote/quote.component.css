@@ -121,13 +121,17 @@
    }
 
    .favquote {
+     box-sizing: border-box;
+
      display: flex;
      flex-wrap: wrap;
      justify-content: center;
      width: 100%;
-     box-shadow: 0 0 5px rgb(255, 255, 255);
      position: relative;
-  animation: show 1.2s linear 1;
-  
-    
+     font-family: Courgette, cursive;
+     color: rgb(5, 61, 61);
+     background-clip: border;
+     border-radius: 20px;
+
+
    }

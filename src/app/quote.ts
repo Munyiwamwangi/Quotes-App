@@ -10,6 +10,6 @@ export class Quote {
     public dnVote: number,
     public completeDate: Date) {
     this.showDescription = false;
-    //  this.showButton:true;
+    this.showButton = true;
   }
 }

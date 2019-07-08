@@ -53,9 +53,9 @@
     <div class="col-md-12 quotes">
         <div class="setbox">
             <div>
-                <!--************************* quote voting  Effect*****************-->
+                <!--************************* quote of the day*****************-->
 
-                <div class="favquote" *ngFor="let quote of quotes; let i = index; let j = index;">
+                <div style="font-size: 1.5em" class="favquote" *ngFor="let quote of quotes; let i = index; let j = index;">
 
                     <div class="high-quote" appHighestVote *ngIf='quote.upVote == highest() && highest() > 0'>
                         <br>
@@ -72,19 +72,18 @@
                     </div>
                 </div>
             </div>
-            <!--***************************** quote voting  Effect**************************-->
+            <!--***************************** quote of the day**************************-->
 
-            <div *ngFor='let quote of quotes;let i = index' class="quotebox">
+            <div *ngFor='let quote of quotes;let i = index' class="quotebox" >
                 <div *ngIf='quote.showDescription'>
-                    <app-quote-detail class="headstyle" [quote]='quote' (isComplete)='deleteQuote($event,i)'>
-                    </app-quote-detail>
+                        <app-quote-detail [quote]='quotes' (isDone)='quoteShow($event,i)'></app-quote-detail>
                 </div>
                 <div *ngIf='quote.publisher'>
                     <app-quote-detail class="headstyle" [quote]='quote' (isComplete)='deleteQuote($event,i)'>
                     </app-quote-detail>
                 </div>
                 <div class="headstyle">
-                    <h6 id={{i}} appStrikethrough>{{quote.name}} {{quote.completeDate|date}}</h6>
+                    <h6 id={{i}} appStrikethrough>{{quote.publisher}} {{quote.completeDate|date}}</h6>
                     <!-- <div *ngIf= 'showButton' > -->
                     <div>
                         <button r (click)='toggleDetails(i)' class="btn btn-success"

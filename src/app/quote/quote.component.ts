@@ -10,8 +10,11 @@ import { QuoteFormComponent } from '../quote-form/quote-form.component';
 })
 export class QuoteComponent implements OnInit {
   @Input() quote: any;
+  @Input () consolelog: any;
   @Input() submitByName: any;
-  @Input() quoteUpdate: QuoteFormComponent ;
+  @Input() quoteUpdate: QuoteFormComponent;
+  @Output() isComplete = new EventEmitter<boolean>();
+
 
   quotes: Quote[] = [
     new Quote(1, 'Cheap is expensive', 'Merlin', 'Joe', 0, 0, new Date(2004, 7, 14)),
@@ -25,15 +28,22 @@ export class QuoteComponent implements OnInit {
   ];
   toggleDetails(index) {
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
+    this.quotes[index].showButton = !this.quotes[index].showButton;
+
 
   }
   deleteQuote(isComplete, index) {
     if (isComplete) {
-      const toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}?`);
+      const toDelete = confirm(`Are you sure you want to delete quote by: ${this.quotes[index].name}?`);
 
       if (toDelete) {
         this.quotes.splice(index, 1);
       }
+    }
+  }
+  quoteShow(isDone, index) {
+    if (isDone) {
+      console.log('${this.quotes[index].upVote }');
     }
   }
   addNewQuote(quote) {
@@ -44,14 +54,14 @@ export class QuoteComponent implements OnInit {
     this.quotes.push(quote);
     // eventPreventDefault();
   }
-  // <!--***************************** quote voting  Effect ****************************************** -->
+  // <!--***************************** quote voting ****************************************** -->
 
   upVoter(index) {
     let i: number;
     i = this.quotes[index].upVote;
     i++;
     this.quotes[index].upVote = i;
-    console.log('this i: ' + i);
+    // console.log('this i: ' + i);
   }
 
   dnVoter(index) {
@@ -74,7 +84,7 @@ export class QuoteComponent implements OnInit {
     this.quotes.unshift(quote);
     console.log(this.quotes);
   }
-    // <!--***************************** quote voting  Effect ****************************************** -->
+  // <!--************************** quote voting********************** -->
 
   constructor() { }
 
