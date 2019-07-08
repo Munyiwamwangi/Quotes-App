@@ -47,7 +47,7 @@
             <app-quote-form class="headstyle" (addQuote)="addNewQuote($event)"></app-quote-form>
         </div>
     </div>
-    <br><br><br>
+    <br><br><br><br>
     <h1 class="fontcool text-center"> ~ quote of the day ~ </h1>
 
     <div class="col-md-12 quotes">
@@ -61,7 +61,7 @@
                     <div class="high-quote" appHighestVote *ngIf='quote.upVote == highest() && highest() > 0'>
                         <br>
                         <p class="date">{{quote.completeDate | date}}</p>
-                        <p class="quote-desc">{{quote.description}}<br> <span>...{{quote.publisher}}</span></p>
+                        <p class="quote-desc">{{quote.description}}<br> <span>..{{quote.publisher}}</span></p>
                         <div class="votes">
                             <span (click)='upVoter(i);highest();'>
                                 <i class="far fa-thumbs-up"></i>Up<span>{{quote.upVote}}</span>
