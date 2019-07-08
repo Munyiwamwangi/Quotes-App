@@ -70,7 +70,10 @@ Hurray ! ; Create and Enjoy Quotes
 
 ## BDD
 
-<!-- |*Input | Output | Expected Output| -->
+| Input   |  Behavior | Expected Output|
+|:--------|:---------|:--------------|
+|User Quote| Post user's quote| Post user's quote|
+|Vote for a quote|Accumulates number of votes and highlights the vote with the highest likes|Vote for a quote|Accumulates number of votes and highlights the vote with the highest likes|
 
 ## Built With
 
@@ -87,6 +90,10 @@ If you want to put out a pull request you first have to send us the sample code 
 ## Versioning
 
 We use currently have only the first version of this application.
+
+## Link to live App
+
+<a href="https://munyiwamwangi.github.io/Quotes-App/">Link to live site</a>
 
 ## Authors
 
