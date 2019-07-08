@@ -40,6 +40,7 @@ html {
   background-color: rgb(170, 139, 139);
   padding: 3%;
   padding-left: 5%;
+  flood-opacity: .3em;
 
 }
 /****************************** class quotes ********************/

@@ -10,6 +10,7 @@ import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { StrikethroughDirective } from './strikethrough.directive';
 import { DateCountPipe } from './date-count.pipe';
 import { HighestVoteDirective } from './highest-vote.directive';
+import { TotalVotesComponent } from './total-votes/total-votes.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HighestVoteDirective } from './highest-vote.directive';
     QuoteFormComponent,
     StrikethroughDirective,
     DateCountPipe,
-    HighestVoteDirective
+    HighestVoteDirective,
+    TotalVotesComponent
   ],
   imports: [
     BrowserModule,

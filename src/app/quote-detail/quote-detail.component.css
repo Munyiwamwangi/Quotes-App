@@ -1,0 +1,7 @@
+button{
+    display: flex;
+    box-sizing: border-box;
+    float: right;
+    margin-right:10%;
+    margin-top: 7%
+}

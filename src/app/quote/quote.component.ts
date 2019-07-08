@@ -28,9 +28,9 @@ export class QuoteComponent implements OnInit {
   ];
   toggleDetails(index) {
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
+  }
+  toggleVotes(index) {
     this.quotes[index].showButton = !this.quotes[index].showButton;
-
-
   }
   deleteQuote(isComplete, index) {
     if (isComplete) {
@@ -54,7 +54,7 @@ export class QuoteComponent implements OnInit {
     this.quotes.push(quote);
     // eventPreventDefault();
   }
-  // <!--***************************** quote voting ****************************************** -->
+  // <!--******************* quote voting ****************************** -->
 
   upVoter(index) {
     let i: number;
@@ -84,7 +84,7 @@ export class QuoteComponent implements OnInit {
     this.quotes.unshift(quote);
     console.log(this.quotes);
   }
-  // <!--************************** quote voting********************** -->
+  // <!--************************** quote voting ********************** -->
 
   constructor() { }
 
