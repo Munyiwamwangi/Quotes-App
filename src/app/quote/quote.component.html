@@ -17,10 +17,13 @@
             </div>
         </div>
     </div>
-    <!--***************************** 3D Text Effect****************************************** -->
+
+    <!--***************************** 3D Text Effect  ************************************* -->
+
     <hr>
     <div class="col-md-12">
-        <h4 class="fontcool padding-left">"A quote a day can keep your worries at bay, and your success at stay."</h4>
+        <h4 class="fontcool padding-left">"A quote a day can keep your worries at bay, and your success at stay."
+        </h4>
     </div>
     <hr>
     <br>
@@ -28,15 +31,13 @@
     <div class="row">
         <div class="col-md-6">
             <p class="lowcase text-center para1 p1box">
-                <i class="fas fa-quote-left"></i>
-                “ SECURITY IS MOSTLY A SUPERSTITION. IT DOES NOT EXIST IN NATURE, NOR DO THE CHILDREN OF MEN AS A WHOLE
+                <img src="/assets/images/quoteleft.png" alt="quote-left" class="imgsmall">
+                 SECURITY IS MOSTLY A SUPERSTITION. IT DOES NOT EXIST IN NATURE, NOR DO THE CHILDREN OF MEN AS A WHOLE
                 EXPERIENCE IT.
                 AVOIDING DANGER IS NO SAFER IN THE LONG RUN THAN OUTRIGHT EXPOSURE. LIFE IS EITHER A DARING ADVENTURE,
                 OR
-                NOTHING. ”
-                <!-- <img src="/assets/images/quoteleft.png" alt="quote-left"> -->
-                <i class="fas fa-quote-right"></i>
-
+                NOTHING.
+                <img src="/assets/images/downquote.png" alt="quote-left" class="imgsmall">
             </p>
             <div class="blockquote-footer text-center">
                 <small class="text-muted fontcool">HELEN KELLER</small>
@@ -44,7 +45,8 @@
 
         </div>
         <div class="col-md-6">
-            <app-quote-form class="headstyle" (addQuote)="addNewQuote($event)"></app-quote-form>
+            <app-quote-form class="headstyle" (addQuote)="addNewQuote($event)">
+            </app-quote-form>
         </div>
     </div>
     <br><br><br><br>
@@ -53,52 +55,79 @@
     <div class="col-md-12 quotes">
         <div class="setbox">
             <div>
-                <!--************************* quote of the day*****************-->
+
+      <!--*************************  quote of the day *****************-->
 
                 <div style="font-size: 1.4em" class="favquote"
                     *ngFor="let quote of quotes; let i = index; let j = index;">
 
                     <div class="high-quote" appHighestVote *ngIf='quote.upVote == highest() && highest() > 0'>
                         <br>
-                        <p class="date">{{quote.completeDate | date}}</p>
-                        <p class="quote-desc">{{quote.description}}<br> <span>..{{quote.publisher}}</span></p>
+                        <p class="quote-desc">{{quote.description}}
+                           <br>
+                           <span>..{{quote.publisher}}
+                           </span></p>
                         <div class="votes">
                             <span (click)='upVoter(i);highest();'>
-                                <i class="far fa-thumbs-up"></i>Up<span>{{quote.upVote}}</span>
+                               <img src="/assets/images/up.png" alt="quote-left" class="imgsmall">like
+                               <span>{{quote.upVote}}
+                               </span>
                             </span>
                             <span (click)='dnVoter(i)'>
-                                <i class="far fa-thumbs-down"></i>like<span class="dis">{{quote.dnVote}}</span>
+                                <img src="/assets/images/down.png" alt="thumbsup" class="imgsmall">Dis
+                                <span class="dis">{{quote.dnVote}}
+                                </span>
                             </span>
+                            <hr>
+                            <p class="date">Published on: {{quote.completeDate | date}} by {{quote.name}}
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--***************************** quote of the day**************************-->
+
+      <!--****************** quote of the day ***************  ***-->
 
             <div *ngFor='let quote of quotes;let i = index' class="quotebox">
-                <div *ngIf='quote.showDescription'>
-                    <app-quote-detail [quote]='quotes' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
-                </div>
-                <div *ngIf='quote.publisher'>
-                    <app-quote-detail class="headstyle" [quote]='quote' (isComplete)='deleteQuote($event,i)'>
-                    </app-quote-detail>
-                </div>
+
                 <div class="headstyle">
-                    <h6 id={{i}} appStrikethrough>{{quote.publisher}} {{quote.completeDate|date}}</h6>
-                    <!-- <div *ngIf= 'showButton' > -->
+                    <h6 id={{i}}> Posted by: {{quote.publisher}}
+                       <br>
+                       <hr>
+                       <span class="fontcool text-center"style="color: rgb(7, 80, 109);font-size:1.5em " >
+                       <span class="text-center">{{quote.description}}
+                       </span>
+                    </span>
+                    <br>
+                    <br>
+                    <hr>
+                       <p class="date"></p>
+                    </h6>
+
                     <div>
                         <button r (click)='toggleDetails(i)' class="btn btn-success"
                             style="background-color: rgb(8, 117, 108);"> Quote Details
                         </button>
                     </div>
+                    <div *ngIf='quote.showDescription'>
+                        <app-quote-detail [quote]='quotes' (isComplete)='deleteQuote($event,i)'>
+                        </app-quote-detail>
+                        <p class="desc fontcool">Published on: {{quote.completeDate | date}} by: {{quote.name}}
+                        </p>
+                    </div>
+
                     <!--***************************** quote voting icons*********************-->
 
                     <div class="votes">
                         <span (click)='upVoter(i);highest();'>
-                            <i class="far fa-thumbs-up"></i>Like<span>{{quote.upVote}}</span>
+                            <img src="/assets/images/up.png" alt="quote-left" class="imgsmall"> Like
+                            <span> {{quote.upVote}}
+                            </span>
                         </span>
                         <span (click)='dnVoter(i)'>
-                            <i class="far fa-thumbs-down"></i>Dis<span class="dn">{{quote.dnVote}}</span>
+                            <img src="/assets/images/down.png" alt="thumbsdown" class="imgsmall"> Dis
+                            <span class="dn">{{quote.dnVote}}
+                            </span>
                         </span>
                     </div>
                     <!--*********************** quote voting icons*********************** -->
