@@ -65,7 +65,10 @@
      justify-content: center;
      background-color: rgb(211, 141, 35);
    }
+.gdfont{
+   font-family: 'Ribeye Marrow', cursive;
 
+}
    .box {
      display: flex;
    }
